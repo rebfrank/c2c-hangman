@@ -1,13 +1,4 @@
 hangman_parts = [ "head", "left arm", "torso", "right arm", "left leg", "right leg" ]
-hangman_characters = {
-    "head" : "  O",
-    "left arm" : " /",
-    "torso" : "|",
-    "right arm" : "\\",
-    "left leg" : " /",
-    "right leg" : " \\"
-}
-hangman_newlines = [ "head", "right arm", "right leg" ]
 num_wrong_guesses_allowed = len(hangman_parts)
 words = [
     "apple",
@@ -30,6 +21,19 @@ words = [
     ]
 
 def draw_hangman(num_wrong_guesses):
+    if num_wrong_guesses > num_wrong_guesses_allowed:
+        num_wrong_guesses = num_wrong_guesses_allowed
+
+    hangman_characters = {
+        "head" : "  O",
+        "left arm" : " /",
+        "torso" : "|",
+        "right arm" : "\\",
+        "left leg" : " /",
+        "right leg" : " \\"
+    }
+    hangman_newlines = [ "head", "right arm", "right leg" ]
+
     print(" _____")
     print(" |   |")
     print(" | ",end="")
@@ -42,4 +46,3 @@ def draw_hangman(num_wrong_guesses):
     for i in range(len(hangman_newlines) - num_newlines):
         print("\n |",end="")
     print("____\n\n",end="")
-
