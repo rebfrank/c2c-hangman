@@ -34,15 +34,14 @@ def draw_hangman(num_wrong_guesses):
     }
     hangman_newlines = [ "head", "right arm", "right leg" ]
 
-    print(" _____")
-    print(" |   |")
-    print(" | ",end="")
+    output = " _____\n |   |\n | "
     num_newlines = 0
     for i in range(num_wrong_guesses):
-        print(hangman_characters[hangman_parts[i]],end="")
+        output = output + hangman_characters[hangman_parts[i]]
         if hangman_parts[i] in hangman_newlines:
-            print("\n | ",end="")
+            output = output + "\n | "
             num_newlines = num_newlines + 1
     for i in range(len(hangman_newlines) - num_newlines):
-        print("\n |",end="")
-    print("____\n\n",end="")
+        output = output + "\n |"
+    output = output + "____\n\n"
+    print(output)
