@@ -1,5 +1,5 @@
 #
-# HANGMAN Game
+# Code2College HANGMAN Game
 #
 # Ways to run this program:
 #     C:/Users/gstearma/AppData/Local/Programs/Python/Python36/python hangman_gos_hangman_full.py
@@ -52,12 +52,12 @@ def draw_hangman(num_wrong_guesses):
 
     Parameters
     ----------
-    num_wrong_gue : int
+    num_wrong_guesses : int
         The number of wrong guesses.
 
     Returns
     -------
-    No return value, this function only prints the gallows to the console.
+    No return value, this function only prints the gallows and hangman body to the console.
 
     Notes
     -----
@@ -94,11 +94,10 @@ def draw_hangman(num_wrong_guesses):
 
 
 ########
-#
 # check_if_done
 # Inputs:
 #     the secret word, word
-#     number of wrong guesses, guesses
+#     list of letter guesses, guesses
 # Outputs:
 #     returns boolean value True or FaLse
 #
@@ -116,10 +115,9 @@ def check_if_done(word, guesses):
 
 
 ########
-#
 # print_guesses
 # Inputs: the secret word, word
-#          number of wrong guesses, guesses
+#          list of letter guesses, guesses
 # Outputs: prints output string with matching letters that were guessed and _s for letters not guessed
 #
 def print_guesses(word, guesses):
@@ -161,26 +159,26 @@ while wrong_guesses < num_wrong_guesses_allowed and not done:
     guess = guess[0]  # get the first letter only
     # GregS, New stuff
 
-    # Process the letter which was just guessed
+    # Process the letter which was just guessed.
     if guess in word:
-        print("Correct!") # The letter was in the word
+        print("Correct!") # The letter was in the word.
     else:
         print("Wrong!")
-        wrong_guesses = wrong_guesses + 1 # The letter was not in the word - add 1 to the count of wrong guesses
+        wrong_guesses = wrong_guesses + 1 # The letter was not in the word - add 1 to the count of wrong guesses.
 
-    guesses.append(guess) # add the wrong letter to the list of guesses
-    print("You've guessed: " + str(guesses)) # Print all the letters which have been guessed so far
+    guesses.append(guess) # Add the wrong letter to the list of guesses.
+    print("You've guessed: " + str(guesses)) # Print all the letters which have been guessed so far.
 
     done = check_if_done(word, guesses) # Has every letter in the word been guessed yet?
 
 # After the while loop is finished and you get here, the game is done.
 
 # Check for a win or a loss now.
-if wrong_guesses == num_wrong_guesses_allowed: # Have we already had the maximum number of incorrect guesses?
-    print("Sorry, you lost!") # If so, print losing message.
+if wrong_guesses == num_wrong_guesses_allowed:
+    print("Sorry, you lost!") 
     print ("The word was: ",word) # GregS, New stuff - print the word at the end of a losing game.
 else:
-    print_guesses(word, guesses) # There are still additional guesses remaining, so print the word.
-    print("You won!") # Print winning message.
+    print_guesses(word, guesses) # Print the word and list of letters guessed.
+    print("You won!") 
 
 # end
