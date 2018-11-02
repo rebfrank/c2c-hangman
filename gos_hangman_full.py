@@ -37,6 +37,18 @@ words = [
     "twist"
     ]
 
+# GregS, New stuff - make a list of hard words
+# Words taken from https://www.prdaily.com/Main/Articles/20880.aspx
+hardwords = "Awkward Bagpipes  Banjo  Bungler  Croquet  Crypt  Dwarves  Fervid  Fishhook  Fjord  Gazebo  Gypsy  Haiku  Haphazard  Hyphen  Ivory  Jazzy  Jiffy  Jinx  Jukebox  Kayak  Kiosk  Klutz  Memento  Mystify  Numbskull  Ostracize  Oxygen  Pajama  Phlegm  Pixel  Polka  Quad  Quip  Rhythmic  Rogue  Sphinx  Squawk  Swivel  Toady  Twelfth Unzip Waxy Wildebeest Yacht Zealous Zigzag Zippy Zombie "
+
+hardwords_list = hardwords.split(" ")
+# print (hardwords_list)
+
+# Comment out the line below to use the original easy word list.
+words = hardwords_list
+# GregS, New stuff
+
+
 #
 # Functions
 #
