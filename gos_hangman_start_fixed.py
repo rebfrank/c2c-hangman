@@ -80,10 +80,10 @@ def check_if_done(word, guesses):
     If every character in the word has been guessed, it returns True.
     """
 
-# FIXME    for character in *WHAT_GOES_HERE*:  # Need to check each chatacter in _____?
+    for character in word:  # Need to check each chatacter in _____?
         if not character in guesses:
             return False # not done if we find a chaacter that hasn't been guessed.
-# FIXME    return *WHAT GOES HERE*  # This line is outside the for loop...
+    return True  # This line is outside the for loop...
 # check_if_done
 
 
@@ -95,9 +95,9 @@ def print_guesses(word, guesses):
     output_string = ""
     for char in word:
         if char in guesses:
-# FIXME            output_string = output_string + *WHAT_GOES_HERE*   # Need to add the character AND a space to the output_string.
+            output_string = output_string + char + " "   # Need to add the character AND a space to the output_string.
         else:
-# FIXME            output_string = output_string + *WHAT_GOES_HERE*   # Need to add the special character for an unguessed letter AND a space.
+            output_string = output_string + "_ "   # Need to add the special character for an unguessed letter AND a space.
     print(output_string)
 # print_guesses
 
@@ -118,7 +118,7 @@ guesses = []
 done = False
 #
 # Main loop which continues until the word is guessed or there are no more body parts left to draw on the hangman
-#FIXME while wrong_guesses < num_wrong_guesses_allowed and not *WHAT_GOES_HERE*:
+while wrong_guesses < num_wrong_guesses_allowed and not done:
     draw_hangman(wrong_guesses)
 
     print_guesses(word, guesses)

@@ -114,9 +114,9 @@ def draw_hangman(num_wrong_guesses):
 #     returns boolean value True or FaLse
 #
 def check_if_done(word, guesses):
-    r"""This function checks iterates through the characters in the word.
-    If each character in the word has not been guessed, it returns False.
-    Otherwise it returns True.
+    r"""This function iterates through the characters in the word.
+    If any character in the word has not been guessed, it returns False.
+    If every character in the word has been guessed, it returns True.
     """
 
     for character in word:
