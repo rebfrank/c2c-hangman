@@ -123,6 +123,8 @@ done = False
 
     print_guesses(word, guesses)
 
+    guess = input("What is your guess? ")
+
     # Process the letter which was just guessed.
     if guess in word:
         print("Correct!") # The letter was in the word.
